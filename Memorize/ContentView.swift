@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]
+    var emojisVehicles = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]
+    var emojisBuildings = ["🏰", "🏯", "🏠", "🏡", "🏘", "🏚", "🏭", "🏢", "🏬", "🏣", "🏤", "🏥", "🏦", "🏨", "🏪", "🏫", "🏩", "💒", "⛪️", "🕌", "🕍", "🛕", "🏛", "⛩"]
+    var emojisCountries = ["🇨🇳", "🇺🇳", "🇦🇱", "🇩🇿", "🇦🇫", "🇦🇷", "🇦🇪", "🇦🇼", "🇴🇲", "🇦🇿", "🇪🇬", "🇪🇹", "🇮🇪", "🇪🇪", "🇦🇩", "🇦🇴", "🇦🇴", "🇦🇮", "🇦🇬", "🇦🇹", "🇦🇽", "🇦🇺", "🇲🇴", "🇧🇧"]
+    
+    @State var emojis = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]
+    
+    @State var emojisTheme = 0;
     @State var emojiCount = 5
     
     
     var body: some View {
         VStack {
+            Text("Memorize!").font(.largeTitle)
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
@@ -30,6 +37,14 @@ struct ContentView: View {
             }
             .font(.largeTitle)
             .padding(.horizontal)
+            HStack{
+                themeVehicles
+                Spacer()
+                themeBuildings
+                Spacer()
+                themeCountries
+            }.padding(.horizontal)
+            
         }
         .padding()
     }
@@ -54,6 +69,42 @@ struct ContentView: View {
             }
         } label: {
             Image(systemName: "plus.circle")
+        }
+    }
+    
+    var themeVehicles: some View{
+        Button{
+            emojis = emojisVehicles
+            emojis.shuffle()
+        } label: {
+            VStack{
+                Image(systemName: "car.fill")
+                Text("Vehicles")
+            }
+        }
+    }
+    
+    var themeBuildings: some View{
+        Button{
+            emojis = emojisBuildings
+            emojis.shuffle()
+        } label: {
+            VStack{
+                Image(systemName: "building.fill")
+                Text("Buildings")
+            }
+        }
+    }
+    
+    var themeCountries: some View{
+        Button{
+            emojis = emojisCountries
+            emojis.shuffle()
+        } label: {
+            VStack{
+                Image(systemName: "flag.fill")
+                Text("Countries")
+            }
         }
     }
 }
