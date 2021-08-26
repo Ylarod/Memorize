@@ -7,34 +7,49 @@
 
 import SwiftUI
 
-var emojisVehicles = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]
-var emojisBuildings = ["🏰", "🏯", "🏠", "🏡", "🏘", "🏚", "🏭", "🏢", "🏬", "🏣", "🏤", "🏥", "🏦", "🏨", "🏪", "🏫", "🏩", "💒", "⛪️", "🕌", "🕍", "🛕", "🏛", "⛩"]
-var emojisCountries = ["🇨🇳", "🇺🇳", "🇦🇱", "🇩🇿", "🇦🇫", "🇦🇷", "🇦🇪", "🇦🇼", "🇴🇲", "🇦🇿", "🇪🇬", "🇪🇹", "🇮🇪", "🇪🇪", "🇦🇩", "🇦🇴", "🇦🇴", "🇦🇮", "🇦🇬", "🇦🇹", "🇦🇽", "🇦🇺", "🇲🇴", "🇧🇧"]
-
 struct ContentView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     
     var body: some View {
         VStack {
+            Text(viewModel.title).font(.largeTitle)
             ScrollView{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]){
                     ForEach(viewModel.cards) { card in
-                        CardView(card: card).aspectRatio(2/3, contentMode: .fit)
+                        CardView(card: card, color: viewModel.color).aspectRatio(2/3, contentMode: .fit)
                             .onTapGesture {
                                 viewModel.choose(card)
                             }
                     }
                 }
             }
-            .foregroundColor(.red)
+            .foregroundColor(viewModel.color)
+            Spacer()
+            HStack{
+                newGame
+            }
+            .font(.largeTitle)
+            .padding(.horizontal)
         }
         .padding(.horizontal)
     }
+    
+    var newGame : some View{
+        Button {
+            viewModel.newGame()
+        } label: {
+            VStack{
+                Image(systemName: "plus.square.fill")
+            }
+        }
+    }
+        
 }
 
 struct CardView : View {
     let card: MemoryGame<String>.Card
+    let color: Color
     
     var body: some View{
         ZStack {
@@ -46,7 +61,7 @@ struct CardView : View {
             } else if card.isMatched{
                 shape.opacity(0)
             } else{
-                shape.fill().foregroundColor(.red)
+                shape.fill().foregroundColor(color)
             }
         }
     }
