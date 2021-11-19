@@ -10,25 +10,26 @@ import SwiftUI
 
 
 class EmojiMemoryGame: ObservableObject {
+    typealias Card = MemoryGame<String>.Card
     
-    static var themes = [
+    private static var themes = [
         Theme<String>(name: "Halloween", displayCount: 4, color: "blue", contents: ["👻","🎃", "🕷"]),
         Theme<String>(name: "Vehicles", displayCount: 6, color: "red", contents: ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]),
         Theme<String>(name: "Buildings", displayCount: 8, color: "green", contents: ["🏰", "🏯", "🏠", "🏡", "🏘", "🏚", "🏭", "🏢", "🏬", "🏣", "🏤", "🏥", "🏦", "🏨", "🏪", "🏫", "🏩", "💒", "⛪️", "🕌", "🕍", "🛕", "🏛", "⛩"]),
         Theme<String>(name: "Countries", displayCount: 10, color: "purple", contents: ["🇨🇳", "🇺🇳", "🇦🇱", "🇩🇿", "🇦🇫", "🇦🇷", "🇦🇪", "🇦🇼", "🇴🇲", "🇦🇿", "🇪🇬", "🇪🇹", "🇮🇪", "🇪🇪", "🇦🇩", "🇦🇴", "🇦🇴", "🇦🇮", "🇦🇬", "🇦🇹", "🇦🇽", "🇦🇺", "🇲🇴", "🇧🇧"]),
     ]
     
-    static func createMemoryGame(_ themeId: Int) -> MemoryGame<String>{
+    private static func createMemoryGame(_ themeId: Int) -> MemoryGame<String>{
         themes[themeId].shuffled()
         return MemoryGame<String>(numberOfPairsOfCards: themes[themeId].displayCount) { index in
             return themes[themeId].fetchOneContent(index) ?? "Error"
         }
     }
     
-    @Published private var model: MemoryGame<String> = createMemoryGame(0)
+    @Published private var model = createMemoryGame(0)
     private var themeId: Int = 0
     
-    var cards: Array<MemoryGame<String>.Card> {
+    var cards: Array<Card> {
         model.cards
     }
     
@@ -51,7 +52,7 @@ class EmojiMemoryGame: ObservableObject {
     
     //MARK: - Intent(s)
     
-    func choose(_ card: MemoryGame<String>.Card){
+    func choose(_ card: Card){
         model.choose(card)
     }
     
