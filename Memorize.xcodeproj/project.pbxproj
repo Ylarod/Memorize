@@ -16,6 +16,7 @@
 		17E1160B26D4E80C008CBE79 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E1160A26D4E80C008CBE79 /* EmojiMemoryGame.swift */; };
 		17F9690727486AD6001D2FB4 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F9690627486AD6001D2FB4 /* AspectVGrid.swift */; };
 		17F96909274879EF001D2FB4 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F96908274879EF001D2FB4 /* Pie.swift */; };
+		17F9690B27488E05001D2FB4 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F9690A27488E05001D2FB4 /* Cardify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		17E1160A26D4E80C008CBE79 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		17F9690627486AD6001D2FB4 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		17F96908274879EF001D2FB4 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		17F9690A27488E05001D2FB4 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				17E1160A26D4E80C008CBE79 /* EmojiMemoryGame.swift */,
 				1780D14226CF8FA300DBF1D8 /* MemorizeApp.swift */,
 				1780D14426CF8FA300DBF1D8 /* EmojiMemoryGameView.swift */,
+				17F9690A27488E05001D2FB4 /* Cardify.swift */,
 				17F96908274879EF001D2FB4 /* Pie.swift */,
 				17F9690627486AD6001D2FB4 /* AspectVGrid.swift */,
 				1780D14626CF8FA400DBF1D8 /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 			files = (
 				17E1160926D4E674008CBE79 /* MemoryGame.swift in Sources */,
 				1780D14526CF8FA300DBF1D8 /* EmojiMemoryGameView.swift in Sources */,
+				17F9690B27488E05001D2FB4 /* Cardify.swift in Sources */,
 				17F9690727486AD6001D2FB4 /* AspectVGrid.swift in Sources */,
 				17187CAB26D782650000F0FF /* Theme.swift in Sources */,
 				17F96909274879EF001D2FB4 /* Pie.swift in Sources */,
