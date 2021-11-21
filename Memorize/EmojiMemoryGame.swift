@@ -14,14 +14,26 @@ class EmojiMemoryGame: ObservableObject {
     
     private static var themes = [
         Theme<String>(name: "Halloween", displayCount: 4, color: "blue", contents: ["👻","🎃", "🕷"]),
-        Theme<String>(name: "Vehicles", displayCount: 6, color: "red", contents: ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒", "🚐", "🛻", "🚚", "🚛", "🚜", "🦽", "🦼", "🛴", "🚲", "🛵", "🏍", "🛺", "🚝", "🚄", "🚅"]),
         Theme<String>(name: "Buildings", displayCount: 8, color: "green", contents: ["🏰", "🏯", "🏠", "🏡", "🏘", "🏚", "🏭", "🏢", "🏬", "🏣", "🏤", "🏥", "🏦", "🏨", "🏪", "🏫", "🏩", "💒", "⛪️", "🕌", "🕍", "🛕", "🏛", "⛩"]),
         Theme<String>(name: "Countries", displayCount: 10, color: "purple", contents: ["🇨🇳", "🇺🇳", "🇦🇱", "🇩🇿", "🇦🇫", "🇦🇷", "🇦🇪", "🇦🇼", "🇴🇲", "🇦🇿", "🇪🇬", "🇪🇹", "🇮🇪", "🇪🇪", "🇦🇩", "🇦🇴", "🇦🇴", "🇦🇮", "🇦🇬", "🇦🇹", "🇦🇽", "🇦🇺", "🇲🇴", "🇧🇧"]),
+        Theme<String>(name: "Vehicles", displayCount: 4, color: "blue", contents: ["🚙", "🚗", "🚘", "🚕", "🚖", "🏎", "🚚", "🛻", "🚛", "🚐", "🚓", "🚔", "🚑", "🚒", "🚀", "✈", "🛫", "🛬", "🛩", "🚁", "🛸", "🚲", "🏍", "🛶", "⛵", "🚤", "🛥", "🛳", "⛴", "🚢", "🚂", "🚝", "🚅", "🚆", "🚊", "🚉", "🚇", "🛺", "🚜"]),
+        Theme<String>(name: "Sports", displayCount: 4, color: "blue", contents: ["🏈", "⚾", "🏀", "⚽", "🎾", "🏐", "🥏", "🏓", "⛳", "🥅", "🥌", "🏂", "⛷", "🎳"]),
+        Theme<String>(name: "Music", displayCount: 4, color: "blue", contents: ["🎼", "🎤", "🎹", "🪘", "🥁", "🎺", "🪗", "🪕", "🎻"]),
+        
+        Theme<String>(name: "AnimalFaces", displayCount: 4, color: "blue", contents: ["🐵", "🙈", "🙊", "🙉", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐻", "🐼", "🐻‍❄️", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐲"]),
+        Theme<String>(name: "Flora", displayCount: 4, color: "blue", contents: ["🌲", "🌴", "🌿", "☘", "🍀", "🍁", "🍄", "🌾", "💐", "🌷", "🌹", "🥀", "🌺", "🌸", "🌼", "🌻"]),
+        Theme<String>(name: "Weather", displayCount: 4, color: "blue", contents: ["☀️", "🌤", "⛅", "🌥", "☁", "🌦", "🌧", "⛈", "🌩", "🌨", "❄️", "💨", "☔", "💧", "💦", "🌊", "☂️", "🌫", "🌪"]),
+        Theme<String>(name: "COVID", displayCount: 4, color: "blue", contents: ["💉", "🦠", "😷", "🤧", "🤒"]),
+        Theme<String>(name: "Animals", displayCount: 4, color: "blue", contents: ["🐥", "🐣", "🐂", "🐄", "🐎", "🐖", "🐏", "🐑", "🦙", "🐐", "🐓", "🐁", "🐀", "🐒", "🦆", "🦅", "🦉", "🦇", "🐢", "🐍", "🦎", "🦖", "🦕", "🐅", "🐆", "🦓", "🦍", "🦧", "🦣", "🐘", "🦛", "🦏", "🐪", "🐫", "🦒", "🦘", "🦬", "🐃", "🦙", "🐐", "🦌", "🐕", "🐩", "🦮", "🐈", "🦤", "🦢", "🦩", "🕊", "🦝", "🦨", "🦡", "🦫", "🦦", "🦥", "🐿", "🦔"]),
+        Theme<String>(name: "Faces", displayCount: 4, color: "blue", contents: ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "🥲", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🧐", "🤓", "😎", "🥸", "🤩", "🥳", "😏", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤯", "😳", "🥶", "😥", "😓", "🤗", "🤔", "🤭", "🤫", "🤥", "😬", "🙄", "😯", "😧", "🥱", "😴", "🤮", "😷", "🤧", "🤒", "🤠"]),
     ]
     
     private static func createMemoryGame(_ themeId: Int) -> MemoryGame<String>{
         themes[themeId].shuffled()
-        return MemoryGame<String>(numberOfPairsOfCards: themes[themeId].displayCount) { index in
+        let numberOfPairsOfCards = Int.random(in: 3...20)
+        themes[themeId].changeDisplayCount(count: numberOfPairsOfCards)
+        print("random numberOfPairsOfCards: \(numberOfPairsOfCards)")
+        return MemoryGame<String>(numberOfPairsOfCards: numberOfPairsOfCards) { index in
             return themes[themeId].fetchOneContent(index) ?? "Error"
         }
     }

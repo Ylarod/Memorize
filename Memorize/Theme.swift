@@ -12,6 +12,9 @@ struct Theme<CardContent>{
     private(set) var displayCount: Int
     private(set) var color: String
     private var contents: Array<CardContent>
+    var emojiCount: Int {
+        contents.count
+    }
     
     init(name: String, displayCount: Int, color: String, contents: Array<CardContent>) {
         self.name = name
